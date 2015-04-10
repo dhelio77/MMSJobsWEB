@@ -10,12 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.mms.exception.AuthenticationException;
 import com.mms.loader.BackendLoader;
-import com.mms.service.IAccessAcctService;
-import com.mms.vo.User;
 
 /**
  * @author Daddy
@@ -23,27 +19,14 @@ import com.mms.vo.User;
  */
 @Controller
 public class MMSController {
-	
-	@Autowired
-	private BackendLoader backendloader;
-	
-	private IAccessAcctService service;
-	public static final String USER_ATTRIBUTE = "user";
 
-	/**
-	 * MMSController constructor to initialise the BackendLoader.
-	 */
-	public MMSController() {
-		
-	}
+//	@Autowired
+//	private BackendLoader backendLoader;
 	
-	@RequestMapping(value = "/invoice", method = RequestMethod.POST)
-	public String invoice() {
-		String page;
-		
-		page="login/loginverified";
-		
-		return page;
+	@RequestMapping(value = "/hello", method = RequestMethod.POST)
+	public String helloWorld(@RequestParam(value="name") String name, Model model) {
+		model.addAttribute("name", name);
+		return "hello";
 	}
 	
 }
