@@ -52,7 +52,7 @@
 					<li><a href="login">Login</a></li>
 				</ul>
 				
-				<div class="clearer">&nbsp;</div>
+				
 				
 			</div>
 
